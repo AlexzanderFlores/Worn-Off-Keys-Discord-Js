@@ -1,3 +1,10 @@
+/**
+ * NOTE:
+ *  Some parts of this code have been improved since the original command base video.
+ *  This file should still work as expected, however if you are learning the inner workings of
+ *  this file then expect the file to be slightly different than in the video.
+ */
+
 const { prefix } = require('../config.json')
 
 const validatePermissions = (permissions) => {
@@ -75,7 +82,12 @@ module.exports = (client, commandOptions) => {
     const { member, content, guild } = message
 
     for (const alias of commands) {
-      if (content.toLowerCase().startsWith(`${prefix}${alias.toLowerCase()}`)) {
+      const command = `${prefix}${alias.toLowerCase()}`
+
+      if (
+        content.toLowerCase().startsWith(`${command} `) ||
+        content.toLowerCase() === command
+      ) {
         // A command has been ran
 
         // Ensure the user has the required permissions
