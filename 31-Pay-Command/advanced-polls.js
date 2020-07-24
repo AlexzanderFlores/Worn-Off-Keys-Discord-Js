@@ -1,8 +1,12 @@
-const channels = ['735457261996081182']
+const channels = ['731801004462571602']
 
 module.exports = (client) => {
   client.on('message', (message) => {
-    const { content } = message
+    const { channel, content } = message
+
+    if (!channels.includes(channel.id)) {
+      return
+    }
 
     const eachLine = content.split('\n')
 
