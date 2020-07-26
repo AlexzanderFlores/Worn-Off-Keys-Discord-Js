@@ -12,7 +12,11 @@ module.exports = (client) => {
     const joined = !!newState.channelID
 
     const channelId = joined ? newState.channelID : oldState.channelID
-    const channel = guild.channels.cache.get(channelId)
+    let channel = guild.channels.cache.get(channelId)
+
+    console.log(
+      `${newState.channelID} vs ${oldState.channelID} (${channel.name})`
+    )
 
     if (channel.name === channelName) {
       if (joined) {
@@ -46,6 +50,15 @@ module.exports = (client) => {
           })
         }
       } else if (
+        channel.members.size === 0 &&
+        getVoiceChannels(guild).size > 1
+      ) {
+        channel.delete()
+      }
+    } else if (oldState.channelID) {
+      channel = guild.channels.cache.get(oldState.channelID)
+      if (
+        channel.name === channelName &&
         channel.members.size === 0 &&
         getVoiceChannels(guild).size > 1
       ) {
