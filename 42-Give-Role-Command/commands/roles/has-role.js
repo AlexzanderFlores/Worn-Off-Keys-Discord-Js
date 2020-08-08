@@ -26,9 +26,9 @@ module.exports = {
     const member = guild.members.cache.get(targetUser.id)
 
     if (member.roles.cache.get(role.id)) {
-      message.reply('That user does have that role')
+      message.reply(`That user has the ${roleName} role`)
     } else {
-      message.reply('That user does not have that role')
+      message.reply(`That user does not have the ${roleName} role`)
     }
   },
 }

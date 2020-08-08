@@ -1,5 +1,5 @@
 module.exports = {
-  commands: 'removerole',
+  commands: ['removerole', 'delrole', 'deleterole'],
   minArgs: 2,
   expectedArgs: "<Target user's @> <The role name>",
   permissions: 'ADMINISTRATOR',
@@ -26,12 +26,10 @@ module.exports = {
     const member = guild.members.cache.get(targetUser.id)
 
     if (member.roles.cache.get(role.id)) {
-      // Member does have the role
       member.roles.remove(role)
-      message.reply('That user no longer has that role')
+      message.reply(`That user no longer has the ${roleName} role`)
     } else {
-      // Member does NOT have the role
-      message.reply('That user does not have that role')
+      message.reply(`That user does not have the ${roleName} role`)
     }
   },
 }
