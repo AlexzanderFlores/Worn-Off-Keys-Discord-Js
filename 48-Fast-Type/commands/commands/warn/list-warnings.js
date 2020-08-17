@@ -14,7 +14,7 @@ module.exports = {
     }
 
     const guildId = message.guild.id
-    const userId = message.member.id
+    const userId = target.id
 
     await mongo().then(async (mongoose) => {
       try {
