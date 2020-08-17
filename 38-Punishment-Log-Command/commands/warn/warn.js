@@ -17,7 +17,7 @@ module.exports = {
     arguments.shift()
 
     const guildId = message.guild.id
-    const userId = message.member.id
+    const userId = target.id
     const reason = arguments.join(' ')
 
     const warning = {
