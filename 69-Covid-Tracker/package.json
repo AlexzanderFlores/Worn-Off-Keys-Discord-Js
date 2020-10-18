@@ -1,0 +1,31 @@
+{
+  "name": "1-Creating-The-Bot",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "github:discordjs/opus",
+    "axios": "^0.20.0",
+    "chart.js": "^2.9.3",
+    "chartjs-node-canvas": "^3.0.6",
+    "commando-provider-mongo": "^1.1.1",
+    "discord.js": "^12.2.0",
+    "discord.js-commando": "git+https://github.com/discordjs/Commando.git",
+    "module-alias": "^2.2.2",
+    "mongoose": "^5.9.24",
+    "redis": "^3.0.2"
+  },
+  "_moduleAliases": {
+    "@root": ".",
+    "@schemas": "./schemas",
+    "@util": "./util",
+    "@features": "./features/features",
+    "@commands": "./commands/command"
+  }
+}
