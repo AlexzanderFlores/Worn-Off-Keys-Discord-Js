@@ -37,7 +37,7 @@ module.exports = {
     const channel = guild.channels.cache.get(channelId)
     channel
       .send(
-        `A new ticketh has been creaated by <@${member.id}>
+        `A new ticket has been created by <@${member.id}>
     
 "${text}"
 
