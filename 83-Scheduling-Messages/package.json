@@ -1,0 +1,19 @@
+{
+  "name": "83-Scheduling-Messages",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0",
+    "moment-timezone": "^0.5.33",
+    "mongoose": "^5.12.0",
+    "wokcommands": "^1.2.8"
+  }
+}
