@@ -119,7 +119,7 @@ module.exports = (client) => {
       const redisKey = `${redisKeyPrefix}${id}-${guild.id}`
 
       if (seconds > 0) {
-        redisClient.set(redisKey, 'true', 'EX', 10)
+        redisClient.set(redisKey, 'true', 'EX', seconds)
       } else {
         redisClient.set(redisKey, 'true')
       }
