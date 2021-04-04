@@ -13,7 +13,7 @@ loadData()
 
 module.exports = {
   requiredPermissions: ['ADMINISTRATOR'],
-  callback: async (message) => {
+  callback: async ({message}) => {
     const { guild, channel } = message
 
     await welcomeSchema.findOneAndUpdate(
