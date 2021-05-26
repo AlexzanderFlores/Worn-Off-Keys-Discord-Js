@@ -16,14 +16,17 @@ const width = 800
 const height = 600
 
 const chartCallback = (ChartJS) => {
-  ChartJS.plugins.register({
-    beforeDraw: (chartInstance) => {
-      const { chart } = chartInstance
-      const { ctx } = chart
-      ctx.fillStyle = 'white'
-      ctx.fillRect(0, 0, chart.width, chart.height)
-    },
-  })
+    ChartJS.register({
+        id: 'background_color',
+        beforeDraw: (chart) => {
+            const ctx = chart.canvas.getContext('2d');
+            ctx.save();
+            ctx.globalCompositeOperation = 'destination-over';
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, chart.width, chart.height);
+            ctx.restore();
+        },
+    })
 }
 
 module.exports = class ChartCommand extends Commando.Command {
