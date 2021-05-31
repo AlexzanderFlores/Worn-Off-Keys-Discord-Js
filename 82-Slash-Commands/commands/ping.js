@@ -5,7 +5,7 @@ module.exports = {
   testOnly: true,
   description: 'A simple ping pong command!!!',
   minArgs: 2,
-  expectedArgs: '<Name> <Age> [Country]',
+  expectedArgs: '<name> <age> [country]',
   callback: ({ message, args }) => {
     const embed = new MessageEmbed().setTitle('Example').setDescription('pong')
 
